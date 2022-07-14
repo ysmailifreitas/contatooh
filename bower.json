@@ -1,0 +1,22 @@
+{
+  "name": "contatooh",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/ysmailifreitas/contatooh",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/vendor"
+  ],
+  "dependencies": {
+    "angular": "1.3",
+    "angular-route": "1.3"
+  },
+  "authors": [
+    "ysmaili.freitas <ysmailigabriel@gmail.com>"
+  ]
+}

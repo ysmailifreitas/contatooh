@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="contatooh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contatooh</title>
+</head>
+<body ng-controller="ContatoController">
+    <h1>Bem vindo ao Contatooh</h1>
+    <button ng-click="incrementa()">Novo</button>
+    <p>Contatos Cadastrados: {{total}}</p>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/ContatosController.js"></script>
+</body>
+</html>
