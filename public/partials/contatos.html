@@ -7,7 +7,7 @@
     Novo
 </button>
 <input type="search" ng-model="filtro" placeholder="parte do nome">
-<p>Contatos cadastrados: {{total}}</p>
+<p>Contatos cadastrados: {{contatos.length}}</p>
 <div class="table-responsive">
     <table class="table table-hover">
         <tr>
@@ -16,12 +16,12 @@
             <th class="text-center">Ação</th>
         </tr>
         <tr ng-repeat="contato in contatos | filter: filtro">
-            <td>    
+            <td>
                 <a>{{contato.nome}}</a>
             </td>
             <td>{{contato.email}}</td>
             <td class="text-center">
-                <button class="btn btn-warning">
+                <button ng-click="remove(contato)" class="btn btn-warning">
                     Remover
                 </button>
             </td>
@@ -32,7 +32,7 @@
             </td>
             <td>cont@empresa.com.br</td>
             <td class="text-center">
-                <button class="btn btn-warning">
+                <button ng-click="remove(contato)" class="btn btn-warning">
                     Remover
                 </button>
             </td>
