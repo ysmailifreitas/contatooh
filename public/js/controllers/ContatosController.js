@@ -1,26 +1,37 @@
+
 angular.module('contatooh').controller('ContatosController',
-    function($scope, $resource) {
+    function(Contato, $scope) {
         $scope.contatos = [];
+
         $scope.filtro = '';
-        var Contato = $resource('/contatos/:id');
+
+        $scope.mensagem = {texto: ''};
+
         function buscaContatos() {
             Contato.query(
-                function (contatos) {
+                function(contatos) {
                     $scope.contatos = contatos;
+                    $scope.mensagem = {};
                 },
-                function (erro) {
-                    console.log("Não foi possível obter a lista de contatos");
+                function(erro) {
                     console.log(erro);
+                    $scope.mensagem = {
+                        texto: 'Não foi possível obter a lista'
+                    };
                 }
             );
         }
+        buscaContatos();
+
         $scope.remove = function(contato) {
-            var promise = Contato.delete({id: contato._id},
+            Contato.delete({id: contato._id},
                 buscaContatos,
                 function(erro) {
-                    console.log('Não foi possível remover o contato');
+                    $scope.mensagem = {
+                        texto: 'Não foi possível remover o contato'
+                    };
                     console.log(erro);
-                });
+                }
+            );
         };
-        buscaContatos();
     });
