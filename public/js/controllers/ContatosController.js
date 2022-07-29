@@ -1,4 +1,3 @@
-
 angular.module('contatooh').controller('ContatosController',
     function(Contato, $scope) {
         $scope.contatos = [];
